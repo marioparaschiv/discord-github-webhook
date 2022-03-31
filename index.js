@@ -25,8 +25,8 @@ app.post('/payload', ({ body }, res) => {
       const embed = new MessageEmbed();
       embed.setTitle(`${repo.full_name} - ${count} new commit${count > 1 ? 's' : ''}`);
       embed.setDescription(commits.map(c => {
-         const messages = c.message.split('\n\n');
-         const [short, ...long] = messages ?? [];
+         const messages = c.message.split('\n');
+         const [short, ...long] = messages.filter(Boolean) ?? [];
          const id = c.id.slice(0, 7);
          const author = c.author;
          const url = c.url;
