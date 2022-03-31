@@ -44,11 +44,11 @@ app.post('/payload', ({ body }, res) => {
       embed.setURL(body.compare);
       embed.setColor('RED');
 
-      const { author } = body.head_commit;
+      const { sender } = body;
       embed.setAuthor({
-         name: author.name,
-         iconURL: `https://github.com/${author.username}.png`,
-         url: `https://github.com/${author.username}`
+         name: sender.login,
+         iconURL: sender.avatar_url,
+         url: sender.html_url
       });
 
       webhook.send({ embeds: [embed] });
