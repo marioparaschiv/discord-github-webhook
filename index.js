@@ -20,8 +20,10 @@ app.post('/payload', ({ body }, res) => {
       const repo = body.repository;
       const commits = body.commits;
 
-      if (~blacklisted.indexOf(repo.name)) return res.end();
-
+      if (~blacklisted.indexOf(repo.name) || count === 0) {
+         return res.end();
+      }
+         
       const embed = new MessageEmbed();
       embed.setTitle(`${repo.full_name} - ${count} new commit${count > 1 ? 's' : ''}`);
       embed.setDescription(commits.map(c => {
