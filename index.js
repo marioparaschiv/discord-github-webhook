@@ -20,8 +20,25 @@ app.post('/payload', ({ body }, res) => {
       const repo = body.repository;
       const commits = body.commits;
 
-      if (~blacklisted.indexOf(repo.name) || count === 0) {
+      if (~blacklisted.indexOf(repo.name)) {
          return res.end();
+      }
+      
+      if (count === 0) {
+         const embed = new MessageEmbed();
+         embed.setTitle(`${repo.full_name} - Force pushed`);
+
+         embed.setURL(body.compare);
+         embed.setColor('RED');
+
+         const { sender } = body;
+         embed.setAuthor({
+            name: sender.login,
+            iconURL: sender.avatar_url,
+            url: sender.html_url
+         });
+
+         return webhook.send({ embeds: [embed] });
       }
          
       const embed = new MessageEmbed();
