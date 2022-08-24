@@ -2,7 +2,7 @@
    "name": "github-webhook-proxy",
    "version": "1.0.0",
    "description": "Proxies & filters GitHub commits to a @discord webhook.",
-   "main": "index.js",
+   "main": "src/index.js",
    "type": "module",
    "author": "eternal <eternal.git@gmail.com> (https://github.com/localip)",
    "license": "Unlicensed",
