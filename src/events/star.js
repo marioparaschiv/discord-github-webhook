@@ -1,5 +1,5 @@
+import Config from '../../config.json' assert { type: 'json' };
 import { MessageEmbed } from 'discord.js';
-import { Colours } from '../constants.js';
 
 const cache = [];
 
@@ -23,7 +23,7 @@ export default ({ body }, _, webhook) => {
    });
 
    const embed = new MessageEmbed()
-      .setColor(Colours.BRAND)
+      .setColor(Config.Colour)
       .setTitle(`${repo.full_name} - Star ${body.action === 'deleted' ? 'Removed' : 'Added'}`)
       .setURL(repo.html_url)
       .setAuthor({

@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import * as Events from './events/index.js';
 import { WebhookClient } from 'discord.js';
 import bodyParser from 'body-parser';
+import { writeFileSync } from 'fs';
 import express from 'express';
 
 const { WEBHOOK, BLACKLISTED } = process.env;
@@ -15,7 +15,7 @@ const webhook = new WebhookClient({ url: WEBHOOK });
 
 app.use(bodyParser.json());
 
-app.post('/payload', function (req, res) {
+app.post('/', function (req, res) {
    try {
       const { body } = req;
       const repo = body.repository;

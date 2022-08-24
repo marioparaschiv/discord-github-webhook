@@ -1,5 +1,5 @@
+import Config from '../../config.json' assert { type: 'json' };
 import { MessageEmbed } from 'discord.js';
-import { Colours } from '../constants.js';
 import { codeblock } from '../util.js';
 
 export default ({ body }, _, webhook) => {
@@ -10,7 +10,7 @@ export default ({ body }, _, webhook) => {
       const embed = new MessageEmbed()
          .setTitle(`${repository.full_name} - Force pushed`)
          .setURL(body.compare)
-         .setColor(Colours.BRAND)
+         .setColor(Colour)
          .setAuthor({
             name: sender.login,
             iconURL: sender.avatar_url,
@@ -23,7 +23,7 @@ export default ({ body }, _, webhook) => {
    const embed = new MessageEmbed()
       .setTitle(`${repository.full_name} - ${count} new commit${count > 1 ? 's' : ''}`)
       .setURL(body.compare)
-      .setColor(Colours.BRAND)
+      .setColor(Config.Colour)
       .setDescription(commits.map(parseCommit).join('\n'))
       .setAuthor({
          name: sender.login,
