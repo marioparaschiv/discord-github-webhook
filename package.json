@@ -1,15 +1,15 @@
 {
-   "name": "github-webhook-proxy",
-   "version": "1.0.0",
-   "description": "Proxies & filters GitHub commits to a @discord webhook.",
-   "main": "src/index.js",
-   "type": "module",
-   "author": "eternal <eternal.git@gmail.com> (https://github.com/localip)",
-   "license": "Unlicensed",
-   "dependencies": {
-      "body-parser": "^1.19.2",
-      "discord.js": "^13.6.0",
-      "dotenv": "^16.0.0",
-      "express": "^4.17.3"
-   }
+	"name": "github-webhook-proxy",
+	"version": "1.0.0",
+	"description": "Proxies & filters GitHub commits to a @discord webhook.",
+	"main": "src/index.js",
+	"type": "module",
+	"author": "Mario <mariovparaschiv@gmail.com> (github.com/localip)",
+	"license": "Unlicensed",
+	"dependencies": {
+		"body-parser": "^1.19.2",
+		"discord.js": "^13.6.0",
+		"dotenv": "^16.0.0",
+		"express": "^4.17.3"
+	}
 }
