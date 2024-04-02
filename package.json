@@ -4,7 +4,7 @@
 	"description": "Proxies & filters GitHub commits to a @discord webhook.",
 	"main": "src/index.js",
 	"type": "module",
-	"author": "Mario <mariovparaschiv@gmail.com> (github.com/localip)",
+	"author": "Mario <me@marioparaschiv.com> (github.com/marioparaschiv)",
 	"license": "Unlicensed",
 	"dependencies": {
 		"body-parser": "^1.19.2",
